@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Event Finder </title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #074b2b;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #event-list {
+            margin-top: 20px;
+        }
+
+        .event-item {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .the-href-pages {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        p {
+            color: #ffffff;
+        }
+    </style>
+    <script type="text/javascript">
+        // JavaScript code can be added here for interactivity
+        var seconds = 0;
+
+        // called when the page loads to begin the timer
+        function startTimer() {
+            // 1000 milliseconds = 1 second
+            window.setInterval("updateTime()", 1000);
+        } // end function startTimer
+
+        // called every 1000 ms to update the timer
+        function updateTime() {
+            ++seconds;
+            document.getElementById("soFar").innerHTML = seconds;
+        }
+    </script>
+</head>
+
+<body onload="startTimer()">
+    <!-- FCIT Logo -->
+    <a href="https://fcitweb.kau.edu.sa/fcitwebsite/index.php">
+        <img src="FCIT_Logo.png" alt="FCIT Logo"
+            style="display: block; margin-left: auto; margin-right: auto; width: 250px; border-radius: 200px; border-style:double;">
+    </a>
+    <h1> FCIT Event Finder </h1>
+
+    <!--Pages -->
+    <nav class="the-href-pages" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+        <label style="color:rgb(255, 255, 255); font-size: 20px;">
+            <a href="index.html" name="Home" class="the-href-pages"> Home </a> |
+            <a href="events.html" name="Events" class="the-href-pages"> Events </a> |
+            <a href="contact.html" name="Contact" class="the-href-pages"> Contact </a>
+        </label>
+    </nav>
+
+    <!-- login / sign-in pages -->
+    <nav class="the-href-pages" style="text-align: center; margin-top: 0px; margin-bottom: 20px;">
+        <label style="color:rgb(255, 255, 255); font-size: 16px;">
+            <a href="login.html" name="Login" class="the-href-pages"> Login </a> |
+            <a href="signup.html" name="Sign-Up" class="the-href-pages"> Sign-Up </a>
+        </label>
+
+        <p style=" text-align: center; margin-top: 20px; margin-bottom: 20px;">Seconds you have spent viewing this page
+            so far: <strong id="soFar">0</strong> </p>
+        <br /> <br />
+        <!-- About Us Section -->
+        <details>
+            <summary style="text-align: left; font-size: 20px;" name="AboutUs"> About Us </summary>
+            <p style=" text-align: left; margin-top: 10px; margin-bottom: 10px; font-size: medium;">
+                FCIT Event Finder is a student project made for the CPIS358 <strong>(Internet Applications and Web
+                    Programming course.)</strong>
+                The goal of this project is to help FCIT students find all faculty events in one place instead of
+                searching through WhatsApp groups and social media posts.
+                <br /> <br />
+                We built this website to make things easier. It collects events, shows clear details, and helps students
+                know what is happening inside the faculty. Whether it's workshops, club activities, or competitions, the
+                website makes it simple to find and follow events.
+                <br /> <br />
+                This project is created by FCIT students, for FCIT students easy to use, organized, and useful.
+            </p>
+
+
+</html>
