@@ -1,0 +1,47 @@
+<head>
+    <title>Login</title>
+    <style>
+        fieldset {
+            width: 300px;
+            padding: 15px;
+        }
+
+        label {
+            display: block;        
+            margin-bottom: 10px;  
+        }
+
+        input[type="text"],
+        input[type="password"]
+         {
+            width: 100%;           
+            padding: 5px;
+            box-sizing: border-box;
+            margin-top: 3px;
+        }
+
+        input[type="button"] {
+            margin-top: 10px;
+            padding: 6px 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Create an account</h2>
+    <fieldset>
+            <legend>Your information</legend>
+            <label>Full name: 
+                 <input type="text" required /></label></br>
+            <label>Email:
+                <input type="text" required/></label> </br>
+            <label>Password : 
+                <input type="password" required/></label> </br>
+            <label>Confirm Password : 
+                <input type="password" required/></label><br>
+
+            <label><input type="button" value="Create Account"></label></br>
+
+            <p>Already have an account? <a href="login.html">Login here.</a></p>
+    </fieldset>
+
+</body>
