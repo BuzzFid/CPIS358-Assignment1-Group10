@@ -1,49 +1,142 @@
-<head>
-    <title>SignUp</title>
-    <style>
-        fieldset {
-            width: 300px;
-            padding: 15px;
+<!DOCTYPE html>
+<html>
+    <style type="text/css">
+        /* Center the sign-up form both vertically and horizontally */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #074b2b;
+            color: #ffffff;
+     
         }
 
+   
+
+        /* row for first and last name inputs */
+        .name-row {
+            display: flex;
+            gap: 10px;
+        }
+
+
         label {
-            display: block;        
-            margin-bottom: 10px;  
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* inline help tip shown next to a specific field */
+        .inline-tip {
+            color: #ffdddd;
+            font-size: 0.9em;
+            margin-top: 4px;
+            display: block;
         }
 
         input[type="text"],
-        input[type="password"]
-         {
-            width: 100%;           
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
             padding: 5px;
             box-sizing: border-box;
             margin-top: 3px;
         }
 
-        input[type="submit"] {
+        /* Make submit and reset buttons match in size and spacing */
+        input[type="submit"],
+        input[type="reset"] {
             margin-top: 10px;
-            padding: 6px 10px;
+            padding: 8px 14px;
+            display: inline-block;
+            min-width: 140px;
+            box-sizing: border-box;
+            cursor: pointer;
         }
+
+        input[type="reset"] {
+            margin-left: 10px;
+        }
+
     </style>
+    <script>
+
+        var helpArray =
+            ["Enter your first name in this input box.", // element 0
+            "Enter your last name in this input box.", // element 1
+                "Enter your e-mail address in this input box, " +
+                "in the format user@domain.", // element 2
+                "Enter your password in this input box.", // element 3
+                "Enter your password again to confirm it.", // element 4
+                ""]; // element 5 nothing to display
+        function helpText(message, field) {
+            // If a specific field is provided, show the help text inline under that field's label.
+            // message is an index into helpArray; message 6 (or missing) clears the tip.
+            if (!field) {
+                console.warn('helpText: no field provided');
+                return;
+            }
+            var label = field.closest('label') || field.parentNode;
+            if (!label) return;
+            var tipEl = label.querySelector('.inline-tip');
+            var text = helpArray[message] || '';
+            if (!tipEl) {
+                tipEl = document.createElement('div');
+                tipEl.className = 'inline-tip';
+                label.appendChild(tipEl);
+            }
+            if (text) {
+                tipEl.textContent = text;
+                tipEl.style.display = 'block';
+            } else {
+                tipEl.textContent = '';
+                tipEl.style.display = 'none';
+            }
+        } // end function helpText
+
+    </script>
+     
+<head>
+    <title>SignUp</title>
+   
 </head>
 <body>
-    <form action="حط الرابط الي تبيه هنا " method="get">
+    <form action="event.html" method="get">
     <h2>Sign Up</h2>
     <fieldset>
             <legend>Your information</legend>
-            <label>Full name: 
-                 <input type="text" name="fullname" required /></label></br>
+            <div class="name-row">
+                <label>First name:
+                    <input type="text" name="firstname" required placeholder=" Enter your First Name" onfocus="helpText(0, this)" onblur="helpText(5, this)"/>
+                </label>
+                <label>Last name:
+                    <input type="text" name="lastname" required placeholder=" Enter your Last Name" onfocus="helpText(1, this)" onblur="helpText(5, this)" />
+                </label>
+            </div>
+
             <label>Email:
-                <input type="email" name="email" required/></label> </br>
+                <input type="email" name="email" required placeholder="Enter your email" onfocus="helpText(2, this)" onblur="helpText(5, this)"/></label><br>
             <label>Password : 
-                <input type="password" name="password" required/></label> </br>
+                <input type="password" id="password" name="password" placeholder="Enter password" required onfocus="helpText(3, this)" onblur="helpText(5, this)"/></label><br>
             <label>Confirm Password : 
-                <input type="password" name="confirm_password" required/></label><br>
+                <input type="password" id="confirm_password" name="confirm_password" required placeholder="Confirm password" onfocus="helpText(4, this)" onblur="helpText(5, this)"/></label><br>
+            <input type="submit"  value="Create Account">
+            <input type="reset" value="Clear" />
+            <div id="form-warning" role="status" aria-live="polite" style="color:#ffdddd; background:#8b0000; padding:6px; margin-top:8px; display:none; border-radius:4px;">
+            </div>
 
-            <label><input type="submit"  value="Create Account"></label></br>
-
-            <p>Already have an account? <a href="login.html">Login here.</a></p>
+<nav class="the-href-pages" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+        <label style="color:rgb(255, 255, 255); font-size: 20px;">
+            <a href="index.html" name="Home" class="the-href-pages"> Home </a> |
+            <a href="events.html" name="Events" class="the-href-pages"> Events </a> |
+            <a href="contact.html" name="Contact" class="the-href-pages"> Contact </a>
+        </label>
+    </nav>
     </fieldset>
 </form>
  <p><a href="index.html">Back to index</a></p>
 </body>
+</html>
