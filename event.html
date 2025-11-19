@@ -11,7 +11,6 @@
         var savedUsername = searchParams.get("username");
         var savedPassword = searchParams.get("password");
 
-        // flag after successful prompt-login
         var loggedIn = false;
 
         function addEvent() {
@@ -26,12 +25,12 @@
             // if not yet logged in via prompt, ask now
             if (!loggedIn) {
                 var u = window.prompt("Enter your username:");
-                if (u === null) return; // user cancelled
+                if (u === null) return; 
 
                 var p = window.prompt("Enter your password:");
                 if (p === null) return;
 
-                // check against what he typed in login.html
+                
                 if (u === savedUsername && p === savedPassword) {
                     loggedIn = true;
                     window.alert("Login successful. You can add events now.");
@@ -64,7 +63,7 @@
                 "<p>Date: " + date + "</p>" +
                 "<p>More: " + more + "</p>";
 
-            // add to page
+           
             document.getElementById("events").appendChild(eventBox);
         }
     </script>
@@ -83,7 +82,7 @@
 
     <main>
 
-        <!-- Events will be added here -->
+       
         <section id="events"></section>
 
         <section id="addEventSection">
