@@ -11,7 +11,8 @@
                 "in the format user@domain.", // element 2
                 "Enter your password in this input box.", // element 3
                 "Enter your password again to confirm it.", // element 4
-                ""]; // element 5 nothing to display
+                "Enter your username in this input box.", // element 5
+                ""]; // element 6 nothing to display
         function helpText(message, field) {
             // If a specific field is provided, show the help text inline under that field's label.
             // message is an index into helpArray; message 6 (or missing) clears the tip.
@@ -45,24 +46,25 @@
 </head>
 <body>
     <form action="event.html" method="get">
-    <h2>Sign Up</h2>
+    <h1>Create an Account</h1>
     <fieldset>
             <legend>Your information</legend>
             <div class="name-row">
                 <label>First name:
-                    <input type="text" name="firstname" required placeholder=" Enter your First Name" onfocus="helpText(0, this)" onblur="helpText(5, this)"/>
+                    <input type="text" name="firstname" required placeholder=" Enter your First Name" onfocus="helpText(0, this)" onblur="helpText(6, this)"/>
                 </label>
                 <label>Last name:
-                    <input type="text" name="lastname" required placeholder=" Enter your Last Name" onfocus="helpText(1, this)" onblur="helpText(5, this)" />
+                    <input type="text" name="lastname" required placeholder=" Enter your Last Name" onfocus="helpText(1, this)" onblur="helpText(6, this)" />
                 </label>
             </div>
-
+            <label>Username:
+                <input type="text" name="username" required placeholder="Choose a username" onfocus="helpText(5, this)" onblur="helpText(6, this)"/></label><br>
             <label>Email:
-                <input type="email" name="email" required placeholder="Enter your email" onfocus="helpText(2, this)" onblur="helpText(5, this)"/></label><br>
+                <input type="email" name="email" required placeholder="Enter your email" onfocus="helpText(2, this)" onblur="helpText(6, this)"/></label><br>
             <label>Password : 
-                <input type="password" id="password" name="password" placeholder="Enter password" required onfocus="helpText(3, this)" onblur="helpText(5, this)"/></label><br>
+                <input type="password" id="password" name="password" placeholder="Enter password" required onfocus="helpText(3, this)" onblur="helpText(6, this)"/></label><br>
             <label>Confirm Password : 
-                <input type="password" id="confirm_password" name="confirm_password" required placeholder="Confirm password" onfocus="helpText(4, this)" onblur="helpText(5, this)"/></label><br>
+                <input type="password" id="confirm_password" name="confirm_password" required placeholder="Confirm password" onfocus="helpText(4, this)" onblur="helpText(6, this)"/></label><br>
             <input type="submit"  value="Create Account">
             <input type="reset" value="Clear" />
             <div id="form-warning" role="status" aria-live="polite" style="color:#ffdddd; background:#8b0000; padding:6px; margin-top:8px; display:none; border-radius:4px;">
@@ -78,7 +80,7 @@
   <label style="color:rgb(255, 255, 255); font-size: 20px;">
             <a href="event.html" name="Home_Page" class="the-href-pages"> Home Page </a> ||
             <a href="about.html" name="About_Us" class="the-href-pages"> About Us </a> ||
-            <a href="contact.html" name="Contact" class="the-href-pages"> Contact </a>||
+            <a href="contact.html" name="Contact" class="the-href-pages"> Contact </a>
 
         </label>
     </nav>
