@@ -4,25 +4,68 @@
 <link rel="stylesheet" type="text/css" href="Register_login.css">
     <title>Login</title>
 </head>
-
+<script>
+         var helpArray =
+            ["Enter your e-mail address in this input box, ", // element 0
+                "Enter your username in this input box.", // element 1
+                "Enter your password in this input box.", // element 2
+                ""]; // element 3 nothing to display
+        function helpText(message, field) {
+            // If a specific field is provided, show the help text inline under that field's label.
+            // message is an index into helpArray; message 3 (or missing) clears the tip.
+            if (!field) {
+                console.warn('helpText: no field provided');
+                return;
+            }
+            var label = field.closest('label') || field.parentNode;
+            if (!label) return;
+            var tipEl = label.querySelector('.inline-tip');
+            var text = helpArray[message] || '';
+            if (!tipEl) {
+                tipEl = document.createElement('div');
+                tipEl.className = 'inline-tip';
+                label.appendChild(tipEl);
+            }
+            if (text) {
+                tipEl.textContent = text;
+                tipEl.style.display = 'block';
+            } else {
+                tipEl.textContent = '';
+                tipEl.style.display = 'none';
+            }
+        } // end function helpText
+</script>
 <body>
-    <form  action="حط الرابط الي تبيه هنا " method="get">
-    <h2>Login in</h2>
-  <p>  <fieldset>
+    <form  action="event.html" method="get">
+    <h1>Login in</h1>
+  <fieldset>
         <legend>Your information</legend>
         <label>Email:
-            <input type="email" name="email" required /></label></br>
+            <input type="email" name="email" required placeholder="Enter your email" onfocus="helpText(0, this)" onblur="helpText(3, this)" /></label></br>
         <label>Username:
-            <input type="text" name="username" required /></label> </br>
+            <input type="text" name="username" required placeholder="Enter your username" onfocus="helpText(1, this)" onblur="helpText(3, this)" /></label> </br>
         <label>Password :
-            <input type="password" name="password" required />
+            <input type="password" name="password" required placeholder="Enter your password" onfocus="helpText(2, this)" onblur="helpText(3, this)" />
         </label> </br>
 
-        <input type="submit" value="Submit">
-        <input type="reset" value="Clear"></p>
+        <input type="submit" value="Login">
+        <input type="reset" value="Clear">
+<div id="form-warning" role="status" aria-live="polite" style="color:#ffdddd;"></div>
+        <p>Don’t have an account? <a a style="color: rgb(255, 81, 0);" href="signup.html">Sign up here. </a></p>
+ 
+        </label>
+    </nav>
+    </fieldset>
+</form>
 
-        <p>Don’t have an account? <a href="signup.html">Sign up here. </a></p>
-    </form>
- <p><a href="index.html">Back to index</a></p>
+<nav class="the-href-pages" style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
+  <label style="color:rgb(255, 255, 255); font-size: 20px;">
+            <a href="event.html" name="Home_Page" class="the-href-pages"> Home Page </a> ||
+            <a href="about.html" name="About_Us" class="the-href-pages"> About Us </a> ||
+            <a href="contact.html" name="Contact" class="the-href-pages"> Contact </a>
+
+        </label>
+    </nav>
+
 </body>
 </html>
