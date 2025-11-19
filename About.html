@@ -35,17 +35,6 @@
         p {
             color: #ffffff;
         }
-
-        .nav summary {
-            color: white;
-            font-size: 18px;
-        }
-
-        .nav p {
-            color: white;
-            font-size: 16px;
-            margin-left: 20px;
-}
     </style>
     <script type="text/javascript">
         // JavaScript code can be added here for interactivity
@@ -62,14 +51,6 @@
             ++seconds;
             document.getElementById("soFar").innerHTML = seconds;
         }
-
-        function openAbout(){
-            document.getElementById("aboutDetails").open = true;
-        }
-
-        function closeAbout(){
-            document.getElementById("aboutDetails").open = false;
-}
     </script>
 </head>
 
@@ -100,9 +81,7 @@
             so far: <strong id="soFar">0</strong> </p>
         <br /> <br />
         <!-- About Us Section -->
-        <details id="aboutDetails" class="nav"
-         onmouseover="openAbout()"
-         onmouseout="closeAbout()">
+        <details>
             <summary style="text-align: left; font-size: 20px;" name="AboutUs"> About Us </summary>
             <p style=" text-align: left; margin-top: 10px; margin-bottom: 10px; font-size: medium;">
                 FCIT Event Finder is a student project made for the CPIS358 <strong>(Internet Applications and Web
