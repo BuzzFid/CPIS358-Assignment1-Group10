@@ -1,0 +1,64 @@
+
+        /* Center the sign-up form both vertically and horizontally */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #074b2b;
+            color: #ffffff;
+     
+        }
+
+   
+
+        /* row for first and last name inputs */
+        .name-row {
+            display: flex;
+            gap: 10px;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* inline help tip shown next to a specific field */
+        .inline-tip {
+            color: #ffdddd;
+            font-size: 0.9em;
+            margin-top: 4px;
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+            margin-top: 3px;
+        }
+
+        /* Make submit and reset buttons match in size and spacing */
+        input[type="submit"],
+        input[type="reset"] {
+            margin-top: 10px;
+            padding: 8px 14px;
+            display: inline-block;
+            min-width: 140px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+
+        input[type="reset"] {
+            margin-left: 10px;
+        }
+.the-href-pages {
+            color: #ffffff;
+            text-decoration: none;
+        }
