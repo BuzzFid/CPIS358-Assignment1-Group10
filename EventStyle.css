@@ -35,18 +35,9 @@ body {
 }
 
 /* events area */
-#events {
-  margin: 20px;
-  display: flex;
-  gap: 20px;
-}
 
-.event-box {
-  border: 1px solid #ccc;
-  padding: 10px;
-  flex: 1;
-  min-height: 150px;
-}
+
+
 
 /* add event section */
 #addEventSection {
@@ -67,3 +58,28 @@ body {
   color: #ffffff;
   text-decoration: none;
 }
+
+#eventsTable {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    
+}
+
+#eventsTable th {
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+#eventsTable td {
+    border: 1px solid white;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    color: #fefcfc;
+}
+
