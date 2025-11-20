@@ -4,6 +4,34 @@
 <head>
     <title>FCIT Event Finder</title>
     <link rel="stylesheet" href="EventStyle.css">
+
+    <style>
+#eventsTable {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    
+}
+
+#eventsTable th {
+    border: 1px solid white;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    
+}
+
+#eventsTable td {
+    border: 1px solid white;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    color: #fefcfc;
+}
+
+    </style>
+
     <script type="text/javascript">
         // read values that came from login.html 
         var searchParams = new URLSearchParams(window.location.search);
@@ -53,18 +81,17 @@
             var more = window.prompt("More details:");
             if (more === null) return;
 
-            // create new event box
-            var eventBox = document.createElement("div");
-            eventBox.className = "event-box";
+// create new table
+var row = document.createElement("tr");
 
-            eventBox.innerHTML =
-                "<h3>" + name + "</h3>" +
-                "<p>Place: " + place + "</p>" +
-                "<p>Date: " + date + "</p>" +
-                "<p>More: " + more + "</p>";
+row.innerHTML =
+    "<td>" + name + "</td>" +
+    "<td>" + place + "</td>" +
+    "<td>" + date + "</td>" +
+    "<td>" + more + "</td>";
 
-           
-            document.getElementById("events").appendChild(eventBox);
+
+document.getElementById("eventsBody").appendChild(row);
         }
     </script>
 </head>
@@ -73,29 +100,45 @@
 
     <header class="main-header">
         <h1>Welcome to the FCIT Event Finder Page</h1>
-        <label class="linkcolors" style="text-align: right; margin-top: -40px; margin-bottom: 20px;">
-            <nav>
-                <a class="linkcolors" href="about.html">About Us</a>
-                <a class="linkcolors" href="contact.html">Contact</a>
-            </nav>
+        <nav>
+            <a class="linkcolors" href="about.html">About Us</a>
+            <a class="linkcolors" href="contact.html">Contact</a>
+        </nav>
     </header>
 
     <main>
 
-       
-        <section id="events"></section>
+    <section id="eventsSection">
+<table id="eventsTable">
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Place</th>
+            <th>Date</th>
+            <th>More Details</th>
+        </tr>
+    </thead>
+    <tbody id="eventsBody">
+        
+    </tbody>
+</table>
+
+
+        
+        <tbody id="eventsBody">
+            
+        </tbody>
+    </table>
+</section>
+
 
         <section id="addEventSection">
-            <button id="addBtn" onclick="addEvent()">+</button>
+            <button id="addBtn" type="button" onclick="addEvent()">+</button>
             <p>You must have an account to login and add events.</p>
         </section>
 
     </main>
 
-
-
 </body>
 
 </html>
-
-
